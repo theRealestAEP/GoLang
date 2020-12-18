@@ -1,5 +1,5 @@
 How to build
-
+------------------------------ 
 mac & linux stub coming soon 
 
 windows stub:
@@ -15,7 +15,7 @@ Decrypt:
 go build decrypt.go
 
 How to use 
-
+------------------------------ 
 Encrypt your Shellcode payload -(PAYLOADSH is already encrypted dont encrypt it twice)
 ./Encrypt -file PathToShellCode
 
@@ -28,6 +28,7 @@ Decrypt
 
 
 NOTE
+------------------------------ 
 if you change anything in the stub make sure you build first and then adjust the the bytes to skip var as it needs to know how many prepeneded bytes to skip. 
 
 PayloadSH is the shellcode of Payload.go (Payload.exe) IT IS ALREADY ENCRYPTED

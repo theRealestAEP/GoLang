@@ -13,6 +13,12 @@ WIP Mac
 WIP Lin
 - setting up a daemon process directly from memory 
 
+WinSHStubOnline[test]
+- Running a remote encrypted file directly from memory
+
+changeDaWorld
+- embedded mp3 data and a self deleting file
+
 
 How to build
 ------------------------------ 
